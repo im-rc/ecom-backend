@@ -8,7 +8,8 @@ CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     amount NUMERIC(10, 2) NOT NULL,
     user_id INTEGER NOT NULL,
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE order_chairs (
