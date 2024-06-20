@@ -15,19 +15,22 @@ CREATE TABLE orders (
 CREATE TABLE order_chairs (
 	id SERIAL PRIMARY KEY,
 	order_id INTEGER NOT NULL,
-	chair_id INTEGER NOT NULL
+	chair_id INTEGER NOT NULL,
+	FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 CREATE TABLE order_tables (
 	id SERIAL PRIMARY KEY,
 	order_id INTEGER NOT NULL,
-	table_id INTEGER NOT NULL
+	table_id INTEGER NOT NULL,
+	FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 CREATE TABLE order_tops (
 	id SERIAL PRIMARY KEY,
 	order_id INTEGER NOT NULL,
-	top_id INTEGER NOT NULL
+	top_id INTEGER NOT NULL,
+	FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 
